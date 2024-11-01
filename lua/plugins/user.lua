@@ -21,6 +21,7 @@ return {
     opts = function(_, opts)
       -- customize the dashboard header
       opts.section.header.val = {
+        "                                                                          ",
         " █████  ███████ ████████ ██████   ██████  ███    ██ ██    ██ ██ ███    ███",
         "██   ██ ██         ██    ██   ██ ██    ██ ████   ██ ██    ██ ██ ████  ████",
         "███████ ███████    ██    ██████  ██    ██ ██ ██  ██ ██    ██ ██ ██ ████ ██",
@@ -38,7 +39,7 @@ return {
   {
     "L3MON4D3/LuaSnip",
     config = function(plugin, opts)
-      require "astronvim.plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
+      require "astronvim.plugins.configs.luasnip" (plugin, opts) -- include the default astronvim config that calls the setup call
       -- add more custom luasnip configuration such as filetype extend or custom snippets
       local luasnip = require "luasnip"
       luasnip.filetype_extend("javascript", { "javascriptreact" })
@@ -48,7 +49,7 @@ return {
   {
     "windwp/nvim-autopairs",
     config = function(plugin, opts)
-      require "astronvim.plugins.configs.nvim-autopairs"(plugin, opts) -- include the default astronvim config that calls the setup call
+      require "astronvim.plugins.configs.nvim-autopairs" (plugin, opts) -- include the default astronvim config that calls the setup call
       -- add more custom autopairs configuration such as custom rules
       local npairs = require "nvim-autopairs"
       local Rule = require "nvim-autopairs.rule"
@@ -56,18 +57,18 @@ return {
       npairs.add_rules(
         {
           Rule("$", "$", { "tex", "latex" })
-            -- don't add a pair if the next character is %
-            :with_pair(cond.not_after_regex "%%")
-            -- don't add a pair if  the previous character is xxx
-            :with_pair(
-              cond.not_before_regex("xxx", 3)
-            )
-            -- don't move right when repeat character
-            :with_move(cond.none())
-            -- don't delete if the next character is xx
-            :with_del(cond.not_after_regex "xx")
-            -- disable adding a newline when you press <cr>
-            :with_cr(cond.none()),
+          -- don't add a pair if the next character is %
+              :with_pair(cond.not_after_regex "%%")
+          -- don't add a pair if  the previous character is xxx
+              :with_pair(
+                cond.not_before_regex("xxx", 3)
+              )
+          -- don't move right when repeat character
+              :with_move(cond.none())
+          -- don't delete if the next character is xx
+              :with_del(cond.not_after_regex "xx")
+          -- disable adding a newline when you press <cr>
+              :with_cr(cond.none()),
         },
         -- disable for .vim files, but it work for another filetypes
         Rule("a", "a", "-vim")
@@ -75,12 +76,60 @@ return {
     end,
   },
 
-{
+  {
     "williamboman/mason-lspconfig.nvim",
     opts = {
       ensure_installed = {
-        "intelephense",  -- PHP language server
+        "intelephense", -- PHP language server
       },
     },
   },
+
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      local telescope = require("telescope")
+      telescope.setup {
+        defaults = {
+          file_ignore_patterns = {
+            -- Node.js
+            "node_modules/",
+
+            -- PHP
+            "vendor/",
+
+            -- Version Control
+            "^%.git/",
+
+            -- Build and Dependency Directories
+            "^build/",
+            "^dist/",
+            "^out/",
+
+            -- IDE and Editor Specific
+            "%.idea/",
+            "%.vscode/",
+            "%.sublime%-project",
+            "%.sublime%-workspace",
+
+            -- Compiled and Temporary Files
+            "%.compiled",
+            "%.min%.js$",
+            "%.min%.css$",
+            "^%.tmp/",
+            "^%.temp/",
+
+            -- Specific Language Artifacts
+            "%.class$",        -- Java
+            "%.pyc$",          -- Python
+            "%.log$",          -- Log files
+            
+            -- macOS Specific
+            "%.DS_Store",
+          }
+        }
+      }
+    end
+  }
 }
