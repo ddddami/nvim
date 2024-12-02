@@ -44,6 +44,11 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      astro = {
+        capabilities = capabilities,
+        on_attach = on_attach,
+        filetypes = { "astro" },
+       }
     },
     -- customize how language servers are attached
     handlers = {

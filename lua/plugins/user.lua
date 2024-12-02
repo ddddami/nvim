@@ -121,10 +121,10 @@ return {
             "^%.temp/",
 
             -- Specific Language Artifacts
-            "%.class$",        -- Java
-            "%.pyc$",          -- Python
-            "%.log$",          -- Log files
-            
+            "%.class$", -- Java
+            "%.pyc$",   -- Python
+            "%.log$",   -- Log files
+
             -- macOS Specific
             "%.DS_Store",
           }
@@ -132,26 +132,25 @@ return {
       }
     end
   },
-{
-    {
-      "sainnhe/gruvbox-material",
-      lazy = false,
-      priority = 1000,
-      config = function()
-        -- Configuration options
-        vim.g.gruvbox_material_background = "soft"
-        vim.g.gruvbox_material_better_performance = 1
-        vim.g.gruvbox_material_enable_italic = 1
-        -- vim.g.gruvbox_material_foreground = 'mix'
+  {
+    "sainnhe/gruvbox-material",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- Configuration options
+      vim.g.gruvbox_material_background = "soft"
+      vim.g.gruvbox_material_better_performance = 1
+      vim.g.gruvbox_material_enable_italic = 1
+      -- vim.g.gruvbox_material_foreground = 'mix'
 
-        vim.g.gruvbox_material_diagnostic_line_highlight = 1
-        vim.g.gruvbox_material_diagnostic_virtual_text = 'colored'
-        vim.g.gruvbox_material_spell_foreground = 'colored'
-        
-        -- For setting it as the default colorscheme
-        vim.cmd("colorscheme gruvbox-material")
-      end
-    }
-  }
+      vim.g.gruvbox_material_diagnostic_line_highlight = 1
+      vim.g.gruvbox_material_diagnostic_virtual_text = 'colored'
+      vim.g.gruvbox_material_spell_foreground = 'colored'
+
+      -- For setting it as the default colorscheme
+      vim.cmd("colorscheme gruvbox-material")
+    end
+
+  },
 
 }
