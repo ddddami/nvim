@@ -75,16 +75,6 @@ return {
       )
     end,
   },
-
-  {
-    "williamboman/mason-lspconfig.nvim",
-    opts = {
-      ensure_installed = {
-        "intelephense", -- PHP language server
-      },
-    },
-  },
-
   {
     "nvim-telescope/telescope.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
