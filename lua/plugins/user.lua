@@ -79,7 +79,7 @@ return {
     "nvim-telescope/telescope.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
-      local telescope = require("telescope")
+      local telescope = require "telescope"
       telescope.setup {
         defaults = {
           file_ignore_patterns = {
@@ -117,10 +117,10 @@ return {
 
             -- macOS Specific
             "%.DS_Store",
-          }
-        }
+          },
+        },
       }
-    end
+    end,
   },
   {
     "sainnhe/gruvbox-material",
@@ -128,19 +128,18 @@ return {
     priority = 1000,
     config = function()
       -- Configuration options
-      vim.g.gruvbox_material_background = "soft"
+      vim.g.gruvbox_material_background = "mix"
       vim.g.gruvbox_material_better_performance = 1
       vim.g.gruvbox_material_enable_italic = 1
       -- vim.g.gruvbox_material_foreground = 'mix'
 
       vim.g.gruvbox_material_diagnostic_line_highlight = 1
-      vim.g.gruvbox_material_diagnostic_virtual_text = 'colored'
-      vim.g.gruvbox_material_spell_foreground = 'colored'
+      vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
+      vim.g.gruvbox_material_spell_foreground = "colored"
 
       -- For setting it as the default colorscheme
-      vim.cmd("colorscheme gruvbox-material")
-    end
-
+      vim.cmd "colorscheme gruvbox-material"
+    end,
   },
 
   {
@@ -166,12 +165,11 @@ return {
       current_line_blame = true,
       current_line_blame_opts = {
         virt_text = true,
-        virt_text_pos = 'eol',
+        virt_text_pos = "eol",
         delay = 350,
         ignore_whitespace = false,
       },
-      current_line_blame_formatter = '    <author>, <author_time:%R> • <summary>',
+      current_line_blame_formatter = "    <author>, <author_time:%R> • <summary>",
     },
-  }
-
+  },
 }
