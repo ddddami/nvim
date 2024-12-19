@@ -11,7 +11,8 @@ return {
         "lua_ls",
         "astro",
         "intelephense", -- PHP language server
-        "gopls"
+        "gopls",
+        "volar",
       },
     },
   },
@@ -32,7 +33,7 @@ return {
     opts = {
       ensure_installed = {
         "python",
-        
+
         -- add more arguments for adding more debuggers
       },
     },
