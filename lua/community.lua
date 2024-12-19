@@ -9,6 +9,7 @@ return {
   -- import/override with your plugins folder
 
   { import = "astrocommunity.pack.go" },
+  { import = "astrocommunity.completion.copilot-lua-cmp" },
   -- {
   --   "leoluz/nvim-dap",
   --   dependencies = { "mfussenegger/nvim-dap  " },
@@ -17,5 +18,4 @@ return {
   --     require("dap-go").setup()
   --   end
   -- }
-
 }
