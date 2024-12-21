@@ -10,9 +10,16 @@ return {
       ensure_installed = {
         "lua_ls",
         "astro",
-        "intelephense", -- PHP language server
+        "intelephense",
         "gopls",
+        "html",
+        "cssls",
+        "tailwindcss",
+        "biome",
+        "eslint",
         "volar",
+        "denols",
+        "ruff",
       },
     },
   },
