@@ -141,24 +141,6 @@ return {
       vim.cmd "colorscheme gruvbox-material"
     end,
   },
-
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    opts = {
-      default_component_configs = {
-        name = {
-          -- Reduce font size using a smaller font
-          format = function(text)
-            return string.format("  %s", text) -- Add extra space to visually reduce size
-          end,
-        },
-      },
-      window = {
-        width = 27, -- Make window slightly narrower
-        font = "JetBrainsMono Nerd Font:h12",
-      },
-    },
-  },
   {
     "lewis6991/gitsigns.nvim",
     opts = {
