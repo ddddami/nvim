@@ -131,13 +131,12 @@ return {
       vim.g.gruvbox_material_background = "mix"
       vim.g.gruvbox_material_better_performance = 1
       vim.g.gruvbox_material_enable_italic = 1
-      -- vim.g.gruvbox_material_foreground = 'mix'
+      vim.g.gruvbox_material_foreground = "mix"
 
       vim.g.gruvbox_material_diagnostic_line_highlight = 1
       vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
       vim.g.gruvbox_material_spell_foreground = "colored"
 
-      -- For setting it as the default colorscheme
       vim.cmd "colorscheme gruvbox-material"
     end,
   },
